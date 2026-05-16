@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDAIC Part 1 – Scrutiny Academy Complete Prep Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #b8d9f0;
+    --sky-light: #deeef9;
+    --sky-dark: #7ab8e0;
+    --navy: #1a2e44;
+    --navy-mid: #243d58;
+    --gold: #c8953a;
+    --gold-light: #e8b96a;
+    --cream: #f8f4ee;
+    --white: #ffffff;
+    --text: #1a2e44;
+    --text-muted: #4a6080;
+    --correct: #2d7a4a;
+    --wrong: #c0392b;
+    --border: rgba(26,46,68,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex; align-items: center; gap: 0; overflow-x: auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,.3);
+  }
+  nav a {
+    color: var(--sky-light); text-decoration: none;
+    font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    padding: 1rem .9rem; white-space: nowrap; border-bottom: 3px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  nav a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1c3a5e 100%);
+    color: white; text-align: center; padding: 4rem 2rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(184,217,240,.18) 0%, transparent 70%);
+  }
+  .hero-logo-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.2);
+    border-radius: 50%; padding: .6rem; margin-bottom: 1.5rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  }
+  .hero-logo-wrap img { width: 110px; height: 110px; border-radius: 50%; display: block; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900; letter-spacing: -.02em; margin-bottom: .4rem;
+    background: linear-gradient(90deg, #fff 0%, var(--sky-light) 60%, var(--gold-light) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero .subtitle {
+    font-size: 1.05rem; color: var(--sky-light); font-weight: 300; max-width: 640px; margin: 0 auto 2rem;
+  }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+  .badge {
+    background: rgba(184,217,240,.18); border: 1px solid rgba(184,217,240,.35);
+    color: var(--sky-light); font-size: .75rem; font-weight: 600; letter-spacing: .05em;
+    padding: .35rem .9rem; border-radius: 50px; text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700; color: var(--navy); margin-bottom: .4rem;
+  }
+  .section-title span { color: var(--gold); }
+  .section-divider { width: 60px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 2rem; }
+
+  /* ── ABOUT EDAIC ── */
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.2rem; }
+  .about-card {
+    background: white; border-radius: 14px; padding: 1.6rem;
+    border: 1px solid var(--border); border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(26,46,68,.06);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .about-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(26,46,68,.12); }
+  .about-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: .5rem; }
+  .about-card p, .about-card li { font-size: .88rem; color: var(--text-muted); }
+  .about-card ul { list-style: disc; padding-left: 1.2rem; }
+  .about-card li { margin-bottom: .25rem; }
+
+  /* ── TOPICS ── */
+  .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.2rem; }
+  .topic-card {
+    background: white; border-radius: 14px; padding: 1.6rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 16px rgba(26,46,68,.06);
+  }
+  .topic-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy);
+    display: flex; align-items: center; gap: .5rem; margin-bottom: .8rem;
+  }
+  .topic-icon { font-size: 1.3rem; }
+  .topic-card ul { list-style: none; }
+  .topic-card li {
+    font-size: .86rem; color: var(--text-muted);
+    padding: .3rem 0; border-bottom: 1px dashed var(--border);
+    display: flex; align-items: flex-start; gap: .4rem;
+  }
+  .topic-card li::before { content: '▸'; color: var(--gold); flex-shrink: 0; }
+  .tag-weight {
+    margin-left: auto; font-size: .7rem; font-weight: 700; letter-spacing: .04em;
+    padding: .15rem .45rem; border-radius: 4px; flex-shrink: 0;
+  }
+  .tag-high { background: #fdecea; color: #c0392b; }
+  .tag-med { background: #fff8e1; color: #a07000; }
+  .tag-low { background: #e8f5e9; color: #2d7a4a; }
+
+  /* ── QUIZ ── */
+  .quiz-controls { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.8rem; align-items: center; }
+  .quiz-controls select, .quiz-controls button {
+    font-family: 'DM Sans', sans-serif; font-size: .85rem;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: .5rem 1rem; cursor: pointer; background: white; color: var(--navy);
+    font-weight: 500; transition: all .2s;
+  }
+  .quiz-controls button { background: var(--navy); color: white; border-color: var(--navy); }
+  .quiz-controls button:hover { background: var(--gold); border-color: var(--gold); }
+  .quiz-progress {
+    background: white; border-radius: 10px; padding: .9rem 1.2rem;
+    border: 1px solid var(--border); margin-bottom: 1.5rem;
+    display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;
+  }
+  .quiz-progress span { font-size: .82rem; font-weight: 600; color: var(--navy); }
+  .progress-bar-wrap { flex: 1; min-width: 150px; background: var(--sky-light); border-radius: 50px; height: 8px; }
+  .progress-bar { height: 8px; border-radius: 50px; background: linear-gradient(90deg, var(--gold), var(--sky-dark)); transition: width .4s; }
+  .qcard {
+    background: white; border-radius: 16px; padding: 1.8rem;
+    border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(26,46,68,.08);
+    margin-bottom: 1.2rem; display: none;
+  }
+  .qcard.active { display: block; animation: fadeIn .35s ease; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  .q-number {
+    font-family: 'DM Mono', monospace; font-size: .72rem; font-weight: 500;
+    color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .6rem;
+  }
+  .q-category {
+    display: inline-block; background: var(--sky-light); color: var(--navy-mid);
+    font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    padding: .2rem .6rem; border-radius: 4px; margin-bottom: 1rem;
+  }
+  .q-text { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 1.2rem; line-height: 1.6; }
+  .options { display: flex; flex-direction: column; gap: .6rem; }
+  .option-btn {
+    background: var(--cream); border: 2px solid var(--border); border-radius: 10px;
+    padding: .8rem 1.2rem; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    font-size: .92rem; color: var(--text); text-align: left;
+    transition: all .2s; display: flex; align-items: center; gap: .7rem;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--sky-dark); background: var(--sky-light); }
+  .option-btn.correct { background: #e8f5e9; border-color: #2d7a4a; color: #1a5c32; }
+  .option-btn.wrong { background: #fdecea; border-color: #c0392b; color: #8b1a10; }
+  .option-letter {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--navy);
+    color: white; font-size: .75rem; font-weight: 700; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .option-btn.correct .option-letter { background: #2d7a4a; }
+  .option-btn.wrong .option-letter { background: #c0392b; }
+  .explanation {
+    margin-top: 1rem; padding: 1rem 1.2rem;
+    background: linear-gradient(135deg, #f0f8ff, #e8f4fd);
+    border-left: 4px solid var(--sky-dark); border-radius: 0 10px 10px 0;
+    font-size: .88rem; color: var(--navy-mid); display: none; line-height: 1.65;
+  }
+  .explanation.show { display: block; animation: fadeIn .3s ease; }
+  .q-nav { display: flex; gap: .8rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  .q-nav button {
+    background: var(--navy); color: white; border: none; border-radius: 8px;
+    padding: .55rem 1.2rem; font-family: 'DM Sans', sans-serif; font-size: .85rem;
+    font-weight: 600; cursor: pointer; transition: background .2s;
+  }
+  .q-nav button:hover { background: var(--gold); }
+  .q-nav button:disabled { background: #ccc; cursor: not-allowed; }
+  .score-panel {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: white; border-radius: 16px; padding: 2.5rem; text-align: center;
+    display: none; margin-bottom: 1.2rem;
+  }
+  .score-panel h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: .5rem; }
+  .score-num { font-size: 4rem; font-weight: 900; color: var(--gold-light); }
+
+  /* ── FLASHCARDS ── */
+  .fc-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+  .fc-tab {
+    padding: .5rem 1.1rem; border-radius: 50px; border: 2px solid var(--border);
+    background: white; font-size: .8rem; font-weight: 600; cursor: pointer;
+    color: var(--navy); transition: all .2s;
+  }
+  .fc-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .fc-tab:hover:not(.active) { border-color: var(--sky-dark); color: var(--sky-dark); }
+  .fc-deck { display: none; }
+  .fc-deck.active { display: block; }
+  .fc-card-wrap { perspective: 1000px; }
+  .fc-card {
+    width: 100%; max-width: 680px; margin: 0 auto;
+    height: 260px; cursor: pointer; position: relative;
+    transform-style: preserve-3d; transition: transform .55s cubic-bezier(.4,0,.2,1);
+  }
+  .fc-card.flipped { transform: rotateY(180deg); }
+  .fc-front, .fc-back {
+    position: absolute; inset: 0; border-radius: 18px; padding: 2rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; backface-visibility: hidden;
+    box-shadow: 0 8px 40px rgba(26,46,68,.14);
+  }
+  .fc-front { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); color: white; }
+  .fc-back { background: linear-gradient(135deg, #f0f8ff, white); transform: rotateY(180deg); }
+  .fc-front .fc-label { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: .8rem; }
+  .fc-front .fc-q { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.5; }
+  .fc-back .fc-label { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+  .fc-back .fc-a { font-size: .95rem; color: var(--navy); line-height: 1.6; font-weight: 500; }
+  .fc-hint { text-align: center; color: var(--text-muted); font-size: .8rem; margin-top: .8rem; }
+  .fc-controls { display: flex; gap: .8rem; justify-content: center; margin-top: 1.2rem; }
+  .fc-controls button {
+    background: var(--navy); color: white; border: none; border-radius: 8px;
+    padding: .55rem 1.4rem; font-family: 'DM Sans', sans-serif; font-size: .85rem;
+    font-weight: 600; cursor: pointer; transition: background .2s;
+  }
+  .fc-controls button:hover { background: var(--gold); }
+  .fc-counter { text-align: center; font-family: 'DM Mono', monospace; font-size: .82rem; color: var(--text-muted); margin-top: .6rem; }
+
+  /* ── SCHEDULE ── */
+  .schedule-intro {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: white; border-radius: 16px; padding: 1.8rem; margin-bottom: 1.5rem;
+  }
+  .schedule-intro h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: .6rem; }
+  .schedule-intro p { font-size: .9rem; opacity: .85; }
+  .phase {
+    background: white; border-radius: 14px; margin-bottom: 1rem;
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26,46,68,.06);
+  }
+  .phase-header {
+    padding: 1.2rem 1.6rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    border-left: 5px solid var(--gold);
+  }
+  .phase-header:hover { background: var(--sky-light); }
+  .phase-header h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); }
+  .phase-header .phase-dates { font-size: .78rem; color: var(--text-muted); font-weight: 500; margin-top: .2rem; }
+  .phase-header .chevron { font-size: 1rem; color: var(--gold); transition: transform .3s; }
+  .phase-header.open .chevron { transform: rotate(180deg); }
+  .phase-body { padding: 0 1.6rem 1.4rem; display: none; }
+  .phase-body.open { display: block; }
+  .week-row { display: flex; gap: .8rem; margin-bottom: .6rem; flex-wrap: wrap; }
+  .week-label { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--gold); font-weight: 600; min-width: 70px; padding-top: .05rem; }
+  .week-content { font-size: .86rem; color: var(--text-muted); flex: 1; }
+  .daily-tip {
+    background: var(--sky-light); border-radius: 10px; padding: 1rem 1.2rem;
+    border-left: 3px solid var(--sky-dark); margin-top: 1rem;
+    font-size: .85rem; color: var(--navy-mid);
+  }
+
+  /* ── HOW TO PREPARE ── */
+  .prep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.2rem; }
+  .prep-card {
+    background: white; border-radius: 14px; padding: 1.6rem;
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26,46,68,.06); transition: transform .2s;
+  }
+  .prep-card:hover { transform: translateY(-3px); }
+  .prep-card::before {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(184,217,240,.35) 0%, transparent 70%);
+  }
+  .prep-icon { font-size: 2rem; margin-bottom: .8rem; }
+  .prep-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: .6rem; }
+  .prep-card p, .prep-card li { font-size: .86rem; color: var(--text-muted); }
+  .prep-card ul { list-style: none; }
+  .prep-card li { padding: .25rem 0; display: flex; gap: .4rem; }
+  .prep-card li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* ── EXAM FORMAT ── */
+  .format-card {
+    background: white; border-radius: 16px; padding: 2rem; border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(26,46,68,.08); margin-bottom: 1.2rem;
+  }
+  .format-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th { background: var(--navy); color: white; padding: .7rem 1rem; text-align: left; font-weight: 600; }
+  td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  tr:hover td { background: var(--sky-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,.7);
+    text-align: center; padding: 2.5rem 1.5rem;
+    font-size: .88rem;
+  }
+  footer .love-line {
+    font-family: 'Playfair Display', serif; font-size: 1.05rem;
+    color: var(--gold-light); font-style: italic; margin-top: .6rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 2.5rem 1rem 3rem; }
+    section { padding: 2.5rem 1rem; }
+  }
+
+  /* ── UTILITY ── */
+  .mt1 { margin-top: 1rem; }
+  .mb1 { margin-bottom: 1rem; }
+  .text-center { text-align: center; }
+  .chip {
+    display: inline-block; background: var(--sky-light); color: var(--navy-mid);
+    font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+    padding: .2rem .6rem; border-radius: 4px; text-transform: uppercase; margin-right: .3rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#about">About EDAIC</a>
+  <a href="#format">Exam Format</a>
+  <a href="#topics">Key Topics</a>
+  <a href="#quiz">50 MCQs</a>
+  <a href="#flashcards">Flashcards</a>
+  <a href="#schedule">Study Schedule</a>
+  <a href="#howto">How to Prepare</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-logo-wrap">
+    <img src="/mnt/user-data/uploads/SCRUTINY_ACADEMY_LOGO.jpg" alt="Scrutiny Academy Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:110px;height:110px;border-radius:50%;background:rgba(184,217,240,0.3);display:flex;align-items:center;justify-content:center;font-family:Playfair Display,serif;font-size:1.6rem;color:white;\'>SA</div>';">
+  </div>
+  <h1>EDAIC Part 1<br>Complete Preparation Guide</h1>
+  <p class="subtitle">European Diploma in Anaesthesiology & Intensive Care — Comprehensive study resource by Scrutiny Academy</p>
+  <div class="hero-badges">
+    <span class="badge">50 MCQs with Answers</span>
+    <span class="badge">Topic-wise Flashcards</span>
+    <span class="badge">Study Schedule Jun–Sep 2026</span>
+    <span class="badge">Key Exam Topics</span>
+    <span class="badge">Exam Format Guide</span>
+  </div>
+</div>
+
+<!-- ABOUT EDAIC -->
+<section id="about">
+  <div class="section-title">About <span>EDAIC Part 1</span></div>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>🎓 What is EDAIC?</h3>
+      <p>The European Diploma in Anaesthesiology and Intensive Care (EDAIC) is a prestigious examination conducted by the European Society of Anaesthesiology (ESA). Part 1 assesses basic science knowledge fundamental to anaesthetic practice.</p>
+    </div>
+    <div class="about-card">
+      <h3>📋 Eligibility</h3>
+      <ul>
+        <li>Medical degree recognised in your country</li>
+        <li>Enrolled in or completed anaesthesia training</li>
+        <li>ESA membership (required at time of exam)</li>
+        <li>Appropriate clinical experience in anaesthesia</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>📅 Exam Sitting</h3>
+      <ul>
+        <li>Typically held twice yearly (Spring & Autumn)</li>
+        <li>Online proctored format (post-COVID)</li>
+        <li>Multiple choice questions (MCQ/SBA/MTF)</li>
+        <li>Results announced within weeks</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>✅ Why EDAIC?</h3>
+      <ul>
+        <li>Internationally recognised qualification</li>
+        <li>Pathway to EDAIC Part 2 (clinical)</li>
+        <li>Improves job prospects across Europe</li>
+        <li>Enhances clinical knowledge & evidence base</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>📊 Pass Rate & Scoring</h3>
+      <p>Pass mark is typically 60–65% (set by the exam committee via Angoff method). Candidates are ranked. High scorers receive a distinction. Negative marking does NOT apply.</p>
+    </div>
+    <div class="about-card">
+      <h3>📚 Recommended Textbooks</h3>
+      <ul>
+        <li>Miller's Anesthesia (latest edition)</li>
+        <li>Nunn's Applied Respiratory Physiology</li>
+        <li>Ganong's Review of Medical Physiology</li>
+        <li>Stoelting's Pharmacology & Physiology</li>
+        <li>Morgan & Mikhail's Clinical Anesthesiology</li>
+        <li>Calvey & Williams: Principles of Pharmacology</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXAM FORMAT -->
+<section id="format">
+  <div class="section-title">Exam <span>Format</span></div>
+  <div class="section-divider"></div>
+  <div class="format-card">
+    <h3>📄 Paper Structure</h3>
+    <table>
+      <tr><th>Component</th><th>Details</th></tr>
+      <tr><td>Paper 1 – Basic Sciences</td><td>60 MCQs — Physiology, Biochemistry, Anatomy, Physics</td></tr>
+      <tr><td>Paper 2 – Pharmacology</td><td>60 MCQs — Pharmacokinetics, Pharmacodynamics, Drug classes</td></tr>
+      <tr><td>Question Format</td><td>Single Best Answer (SBA) or Multiple True/False (MTF)</td></tr>
+      <tr><td>Duration</td><td>3 hours total (approx. 90 min per paper)</td></tr>
+      <tr><td>Negative Marking</td><td>None (no penalty for wrong answers)</td></tr>
+      <tr><td>Pass Mark</td><td>~60–65% (Angoff method, varies each sitting)</td></tr>
+    </table>
+  </div>
+  <div class="format-card">
+    <h3>🧬 Subject Weightings (Approximate)</h3>
+    <table>
+      <tr><th>Subject</th><th>Approx. Weight</th><th>Priority</th></tr>
+      <tr><td>Respiratory Physiology</td><td>18–22%</td><td><span class="chip">Very High</span></td></tr>
+      <tr><td>Cardiovascular Physiology</td><td>15–18%</td><td><span class="chip">Very High</span></td></tr>
+      <tr><td>Pharmacokinetics & PD</td><td>12–15%</td><td><span class="chip">Very High</span></td></tr>
+      <tr><td>Renal & Fluid Physiology</td><td>8–10%</td><td><span class="chip">High</span></td></tr>
+      <tr><td>Neurophysiology & Anatomy</td><td>8–10%</td><td><span class="chip">High</span></td></tr>
+      <tr><td>Applied Anatomy</td><td>8–10%</td><td><span class="chip">High</span></td></tr>
+      <tr><td>Inhalational Agents</td><td>6–8%</td><td><span class="chip">High</span></td></tr>
+      <tr><td>IV Anaesthetics & Opioids</td><td>6–8%</td><td><span class="chip">High</span></td></tr>
+      <tr><td>Physics & Measurement</td><td>5–8%</td><td><span class="chip">Medium</span></td></tr>
+      <tr><td>Statistics & Evidence</td><td>3–5%</td><td><span class="chip">Medium</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- KEY TOPICS -->
+<section id="topics">
+  <div class="section-title">Key <span>Exam Topics</span></div>
+  <div class="section-divider"></div>
+  <div class="topics-grid">
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🫁</span> Respiratory Physiology</h3>
+      <ul>
+        <li>Lung volumes & capacities (FRC, RV, TLC) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Ventilation-perfusion mismatch & V/Q ratio <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Oxygen-haemoglobin dissociation curve <span class="tag-weight tag-high">HIGH</span></li>
+        <li>CO₂ transport & Haldane effect <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Hypoxic pulmonary vasoconstriction <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Compliance, resistance & work of breathing <span class="tag-weight tag-med">MED</span></li>
+        <li>Control of breathing (central/peripheral) <span class="tag-weight tag-med">MED</span></li>
+        <li>Pulmonary surfactant & Laplace's law <span class="tag-weight tag-med">MED</span></li>
+        <li>Diffusion capacity (DLCO) <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">❤️</span> Cardiovascular Physiology</h3>
+      <ul>
+        <li>Cardiac output & Fick's principle <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Frank-Starling law & ventricular function curves <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Action potentials — ventricular vs SA node <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Coronary circulation & oxygen supply/demand <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Baroreceptor reflex & autonomic control <span class="tag-weight tag-med">MED</span></li>
+        <li>Systemic & pulmonary vascular resistance <span class="tag-weight tag-med">MED</span></li>
+        <li>Starling forces & oedema formation <span class="tag-weight tag-med">MED</span></li>
+        <li>Pressure-volume loops <span class="tag-weight tag-med">MED</span></li>
+        <li>Microcirculation & lymphatics <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">💊</span> Pharmacokinetics</h3>
+      <ul>
+        <li>Volume of distribution (Vd) — 1, 2, 3 compartment models <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Clearance — hepatic & renal <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Half-life, context-sensitive half-time <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Bioavailability & first-pass metabolism <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Protein binding (albumin, AAG) <span class="tag-weight tag-med">MED</span></li>
+        <li>Renal drug elimination (GFR, secretion) <span class="tag-weight tag-med">MED</span></li>
+        <li>Drug-receptor interactions (agonist/antagonist) <span class="tag-weight tag-med">MED</span></li>
+        <li>Enzyme induction & inhibition <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🧪</span> Inhalational Agents</h3>
+      <ul>
+        <li>MAC — definition, factors affecting MAC <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Blood:gas partition coefficient <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Oil:gas partition coefficient & potency <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Sevoflurane, desflurane, isoflurane properties <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Meyer-Overton hypothesis <span class="tag-weight tag-med">MED</span></li>
+        <li>Second gas effect & concentration effect <span class="tag-weight tag-med">MED</span></li>
+        <li>Volatile agent metabolism & toxicity <span class="tag-weight tag-med">MED</span></li>
+        <li>Environmental impact & global warming <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🩺</span> IV Anaesthetics & Sedatives</h3>
+      <ul>
+        <li>Propofol: GABA mechanism, context-sensitive T½ <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Ketamine: NMDA antagonism, dissociative <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Thiopentone: redistribution & kinetics <span class="tag-weight tag-med">MED</span></li>
+        <li>Etomidate: adrenal suppression <span class="tag-weight tag-med">MED</span></li>
+        <li>Midazolam & benzodiazepine pharmacology <span class="tag-weight tag-med">MED</span></li>
+        <li>Dexmedetomidine: alpha-2 agonist <span class="tag-weight tag-med">MED</span></li>
+        <li>TIVA principles & TCI systems <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">💉</span> Opioids & Analgesics</h3>
+      <ul>
+        <li>Opioid receptors (μ, κ, δ) & their effects <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Fentanyl, alfentanil, remifentanil kinetics <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Morphine metabolism (M6G, M3G) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Naloxone & reversal pharmacology <span class="tag-weight tag-med">MED</span></li>
+        <li>NSAIDs: COX mechanism, renal effects <span class="tag-weight tag-med">MED</span></li>
+        <li>Paracetamol mechanism & overdose <span class="tag-weight tag-med">MED</span></li>
+        <li>Tramadol: dual mechanism <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">💪</span> Neuromuscular Blocking Agents</h3>
+      <ul>
+        <li>Depolarising vs non-depolarising NMBAs <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Suxamethonium: mechanism, side effects, phase II block <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Rocuronium, vecuronium, atracurium kinetics <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Neuromuscular junction physiology <span class="tag-weight tag-med">MED</span></li>
+        <li>Neostigmine & sugammadex reversal <span class="tag-weight tag-med">MED</span></li>
+        <li>TOF, PTC, DBS monitoring <span class="tag-weight tag-med">MED</span></li>
+        <li>Pseudocholinesterase deficiency <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🧠</span> Neurophysiology</h3>
+      <ul>
+        <li>Cerebral blood flow & autoregulation <span class="tag-weight tag-high">HIGH</span></li>
+        <li>ICP, CPP & Monroe-Kellie doctrine <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Blood-brain barrier & neurotransmitters <span class="tag-weight tag-med">MED</span></li>
+        <li>CMRO₂ & effect of anaesthetics on brain <span class="tag-weight tag-med">MED</span></li>
+        <li>Neuromonitoring: EEG, BIS, SSEPs <span class="tag-weight tag-med">MED</span></li>
+        <li>CSF production & circulation <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🦴</span> Applied Anatomy</h3>
+      <ul>
+        <li>Upper airway anatomy (larynx, trachea) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Brachial plexus anatomy & nerve blocks <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Epidural & spinal anatomy (vertebral levels) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Popliteal fossa & lower limb nerve anatomy <span class="tag-weight tag-med">MED</span></li>
+        <li>Stellate ganglion & sympathetic chain <span class="tag-weight tag-med">MED</span></li>
+        <li>Inguinal & femoral anatomy <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">⚗️</span> Acid-Base & Fluids</h3>
+      <ul>
+        <li>Henderson-Hasselbalch equation & buffer systems <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Metabolic & respiratory acidosis/alkalosis <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Stewart's strong ion difference (SID) <span class="tag-weight tag-med">MED</span></li>
+        <li>Body fluid compartments (ICF, ECF, plasma) <span class="tag-weight tag-med">MED</span></li>
+        <li>Crystalloid vs colloid pharmacology <span class="tag-weight tag-med">MED</span></li>
+        <li>Osmolality & oncotic pressure <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">🔬</span> Physics & Measurement</h3>
+      <ul>
+        <li>Gas laws (Boyle's, Charles', Gay-Lussac's) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Flowmeters — laminar vs turbulent (Hagen-Poiseuille) <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Pulse oximetry — Beer-Lambert law <span class="tag-weight tag-med">MED</span></li>
+        <li>Invasive BP monitoring & damping <span class="tag-weight tag-med">MED</span></li>
+        <li>Electrical safety — microshock vs macroshock <span class="tag-weight tag-med">MED</span></li>
+        <li>Temperature measurement & Bain circuit <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <h3><span class="topic-icon">💧</span> Renal Physiology</h3>
+      <ul>
+        <li>GFR measurement & autoregulation <span class="tag-weight tag-high">HIGH</span></li>
+        <li>Tubular reabsorption & secretion mechanisms <span class="tag-weight tag-high">HIGH</span></li>
+        <li>RAAS system & aldosterone <span class="tag-weight tag-med">MED</span></li>
+        <li>ADH, osmoreceptors & water balance <span class="tag-weight tag-med">MED</span></li>
+        <li>Diuretic pharmacology & mechanisms <span class="tag-weight tag-med">MED</span></li>
+        <li>Renal handling of drugs <span class="tag-weight tag-low">LOW</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="section-title">50 Practice <span>MCQs</span></div>
+  <div class="section-divider"></div>
+
+  <div class="quiz-controls">
+    <select id="filter-category">
+      <option value="all">All Topics</option>
+      <option value="Respiratory">Respiratory Physiology</option>
+      <option value="Cardiovascular">Cardiovascular</option>
+      <option value="Pharmacokinetics">Pharmacokinetics</option>
+      <option value="Inhalational">Inhalational Agents</option>
+      <option value="IV Anaesthetics">IV Anaesthetics</option>
+      <option value="Opioids">Opioids & Analgesics</option>
+      <option value="NMB">Neuromuscular Blockade</option>
+      <option value="Neurophysiology">Neurophysiology</option>
+      <option value="Anatomy">Applied Anatomy</option>
+      <option value="Acid-Base">Acid-Base & Fluids</option>
+      <option value="Physics">Physics & Measurement</option>
+    </select>
+    <button onclick="startQuiz()">▶ Start Quiz</button>
+    <button onclick="resetQuiz()">↺ Reset</button>
+  </div>
+
+  <div class="quiz-progress" id="quiz-progress" style="display:none">
+    <span id="q-counter">Q 1 / 50</span>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar" style="width:2%"></div></div>
+    <span id="score-live">Score: 0</span>
+  </div>
+
+  <div id="score-panel" class="score-panel">
+    <h3>Quiz Complete! 🎉</h3>
+    <div class="score-num" id="score-display">0</div>
+    <p style="opacity:.8;margin-top:.5rem;">out of <span id="total-display">50</span> questions</p>
+    <p style="margin-top:1rem;opacity:.75;font-size:.9rem;" id="score-message"></p>
+  </div>
+
+  <div id="quiz-container"></div>
+</section>
+
+<!-- FLASHCARDS -->
+<section id="flashcards">
+  <div class="section-title">Topic-wise <span>Flashcards</span></div>
+  <div class="section-divider"></div>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Click any card to reveal the answer. Use arrow buttons to navigate.</p>
+
+  <div class="fc-tabs" id="fc-tabs"></div>
+
+  <div id="fc-decks">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- STUDY SCHEDULE -->
+<section id="schedule">
+  <div class="section-title">Study <span>Schedule</span> — Jun 1 to Sep 1, 2026</div>
+  <div class="section-divider"></div>
+  <div class="schedule-intro">
+    <h3>📅 13-Week Structured Study Plan</h3>
+    <p>This schedule is designed for working anaesthesia trainees aiming for a top rank in EDAIC Part 1. Allocate 2–3 hours daily on weekdays and 4–5 hours on weekends. Total study time: approximately 350–400 hours.</p>
+  </div>
+
+  <div id="phases-container">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- HOW TO PREPARE -->
+<section id="howto">
+  <div class="section-title">How to <span>Prepare</span> & Get a Good Rank</div>
+  <div class="section-divider"></div>
+  <div class="prep-grid">
+    <div class="prep-card">
+      <div class="prep-icon">📖</div>
+      <h3>Master the Fundamentals</h3>
+      <ul>
+        <li>Build a strong physiology foundation first</li>
+        <li>Understand mechanisms, not just facts</li>
+        <li>Draw and re-draw key curves & diagrams</li>
+        <li>Cross-reference between subjects</li>
+        <li>Read at least one core textbook fully</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">✏️</div>
+      <h3>Active Recall & Practice</h3>
+      <ul>
+        <li>Do MCQs from day 1, not just at the end</li>
+        <li>Use spaced repetition (Anki/flashcards)</li>
+        <li>Aim for 100+ MCQs per week minimum</li>
+        <li>Review wrong answers immediately</li>
+        <li>Simulate exam conditions (timed practice)</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">🎯</div>
+      <h3>Prioritise Strategically</h3>
+      <ul>
+        <li>Respiratory + CVS physiology = 35% of exam</li>
+        <li>Focus on high-yield topics first</li>
+        <li>Don't neglect pharmacokinetics (always tested)</li>
+        <li>Anatomy of blocks is consistently examined</li>
+        <li>Never skip physics — easy marks</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">🤝</div>
+      <h3>Study Groups & Resources</h3>
+      <ul>
+        <li>Join EDAIC online study groups (Facebook, Telegram)</li>
+        <li>Use ESA online learning platform</li>
+        <li>Attend Scrutiny Academy review sessions</li>
+        <li>Watch video lectures (FRCA/EDAIC YouTube)</li>
+        <li>Use Primary FRCA MCQ banks (similar level)</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">😴</div>
+      <h3>Wellbeing & Balance</h3>
+      <ul>
+        <li>Sleep 7–8 hours — consolidates memory</li>
+        <li>Exercise 3–4× per week (improves focus)</li>
+        <li>Take one full rest day per week</li>
+        <li>Avoid burnout — marathon, not sprint</li>
+        <li>Practice mindfulness before stressful revision</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">🏆</div>
+      <h3>Exam Day Strategy</h3>
+      <ul>
+        <li>Read each question carefully — beware "EXCEPT"</li>
+        <li>Answer ALL questions (no negative marking!)</li>
+        <li>Flag uncertain ones and return</li>
+        <li>First instinct is usually correct — don't over-change</li>
+        <li>Manage time: ~90 sec per question</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">📊</div>
+      <h3>Progress Tracking</h3>
+      <ul>
+        <li>Log daily study hours in a journal</li>
+        <li>Track MCQ scores weekly (target >65%)</li>
+        <li>Review weak topics fortnightly</li>
+        <li>Take a full mock exam every 4 weeks</li>
+        <li>Compare scores to improve systematically</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-icon">🔑</div>
+      <h3>High-Yield Resources</h3>
+      <ul>
+        <li>Anaesthesia UK MCQ bank (anesthesiauk.com)</li>
+        <li>Primary FRCA MCQ books (Pinnock, Yentis)</li>
+        <li>ESA e-learning platform resources</li>
+        <li>Calgary Guide to understanding diagnoses</li>
+        <li>Deranged Physiology website (free, excellent)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <img src="/mnt/user-data/uploads/SCRUTINY_ACADEMY_LOGO.jpg" alt="Scrutiny Academy" style="width:60px;height:60px;border-radius:50%;opacity:.8;margin-bottom:.8rem;display:block;margin-left:auto;margin-right:auto;" onerror="this.style.display='none'">
+    <strong style="color:rgba(255,255,255,.9);font-family:'Playfair Display',serif;font-size:1.1rem;">Scrutiny Academy</strong><br>
+    <span style="font-size:.82rem;opacity:.7;">Excellence in Anaesthesia Education</span>
+  </div>
+  <div class="love-line" style="margin-top:1.5rem;">
+    ♥ Made with love by Dr Pramod Sharma
+  </div>
+  <p style="margin-top:.8rem;font-size:.75rem;opacity:.5;">© 2026 Scrutiny Academy. For educational purposes only. Always verify clinical information with current guidelines.</p>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════════════════════
+// QUIZ DATA — 50 Questions
+// ══════════════════════════════════════════════════════════════════════════
+const questions = [
+  // ── RESPIRATORY (1-10) ──
+  {cat:"Respiratory",q:"Which of the following best describes Functional Residual Capacity (FRC)?",opts:["Volume of air in lungs after maximum expiration","Volume of air in lungs after normal expiration","Volume of air inspired during normal breathing","Total lung capacity minus residual volume"],ans:1,exp:"FRC is the volume remaining in the lungs after a normal (passive) expiration. It equals ERV + RV (~2.5L in an average adult). It is reduced in obesity, supine position, and anaesthesia."},
+  {cat:"Respiratory",q:"The P50 of the oxygen-haemoglobin dissociation curve is approximately:",opts:["2.7 kPa","3.5 kPa","5.3 kPa","7.4 kPa"],ans:0,exp:"P50 is the PO₂ at which haemoglobin is 50% saturated. Normal P50 is ~3.5 kPa (26 mmHg) at pH 7.4, 37°C. A right shift (Bohr effect) increases P50, facilitating O₂ unloading."},
+  {cat:"Respiratory",q:"Hypoxic pulmonary vasoconstriction (HPV) is primarily mediated by:",opts:["Decreased nitric oxide production","Inhibition of KATP channels in smooth muscle","Sympathetic nervous system activation","Increased carbon dioxide tension"],ans:0,exp:"HPV occurs due to decreased nitric oxide (a potent pulmonary vasodilator) in poorly ventilated alveoli. It diverts blood from hypoxic to normoxic areas, optimising V/Q matching. Volatile anaesthetics blunt HPV."},
+  {cat:"Respiratory",q:"The normal dead space:tidal volume ratio (Vd/Vt) is approximately:",opts:["0.1","0.33","0.5","0.7"],ans:1,exp:"Normal Vd/Vt ≈ 0.33 (33%). Anatomical dead space is ~150ml, tidal volume ~450ml. It increases with age, COPD, pulmonary embolism, and positive pressure ventilation. Measured by Bohr equation."},
+  {cat:"Respiratory",q:"Which shift of the Haldane effect BEST describes O₂ binding to Hb?",opts:["O₂ binding increases CO₂ carrying capacity","O₂ binding decreases CO₂ carrying capacity","CO₂ binding increases O₂ affinity","CO₂ decreases H⁺ release from Hb"],ans:1,exp:"The Haldane effect: oxygenation of haemoglobin causes it to become a stronger acid and release CO₂. So as blood is oxygenated in the lungs, CO₂ carrying capacity DECREASES, promoting CO₂ unloading in the lungs."},
+  {cat:"Respiratory",q:"Pulmonary compliance is reduced by all of the following EXCEPT:",opts:["Pulmonary fibrosis","Pulmonary oedema","Emphysema","ARDS"],ans:2,exp:"Emphysema INCREASES pulmonary compliance due to destruction of elastic tissue. Pulmonary fibrosis, oedema, and ARDS all decrease compliance by reducing lung distensibility."},
+  {cat:"Respiratory",q:"The main peripheral chemoreceptors responsible for the hypoxic ventilatory response are located in:",opts:["Aortic bodies only","Carotid bodies predominantly","Both equally","Medullary chemoreceptors"],ans:1,exp:"Carotid bodies (at the bifurcation of common carotid arteries) are the predominant peripheral chemoreceptors for hypoxia. They respond to low PaO₂, high PaCO₂, and low pH. Aortic bodies play a minor role."},
+  {cat:"Respiratory",q:"According to Laplace's law, a smaller alveolus at the same surface tension would have:",opts:["Lower wall tension","Higher transmural pressure","Lower transmural pressure","Equal transmural pressure"],ans:1,exp:"Laplace's law: P = 2T/r. A smaller radius (r) produces higher pressure for the same surface tension (T). Pulmonary surfactant reduces surface tension, particularly in smaller alveoli, preventing collapse."},
+  {cat:"Respiratory",q:"Which measurement BEST estimates diffusion capacity of the lungs (DLCO)?",opts:["Peak expiratory flow","Transfer factor for carbon monoxide","FEV1/FVC ratio","Alveolar-arterial O₂ gradient"],ans:1,exp:"DLCO (Diffusing capacity for CO) measures the transfer factor (TLCO) and is the gold standard for assessing diffusion capacity. It is reduced in emphysema, pulmonary fibrosis, anaemia, and pulmonary vascular disease."},
+  {cat:"Respiratory",q:"The Bohr effect refers to:",opts:["Increased O₂ affinity at low pH","Decreased O₂ affinity at low pH","Increased CO₂ solubility at high O₂ tension","CO₂ transport as carbamino compounds"],ans:1,exp:"The Bohr effect: decreased pH (acidosis) and increased PaCO₂/temperature cause a right shift of the O₂-Hb dissociation curve, reducing O₂ affinity and facilitating O₂ unloading at tissues."},
+
+  // ── CARDIOVASCULAR (11-18) ──
+  {cat:"Cardiovascular",q:"The normal cardiac output in an average adult at rest is approximately:",opts:["2–3 L/min","4–6 L/min","7–9 L/min","10–12 L/min"],ans:1,exp:"Normal CO = 4–6 L/min. Cardiac Index = CO/BSA = ~2.5–4 L/min/m². CO = HR × Stroke Volume. Measured by thermodilution, Fick's principle, or Doppler."},
+  {cat:"Cardiovascular",q:"The Frank-Starling law states that:",opts:["Heart rate determines cardiac output","Increased preload increases stroke volume up to a limit","Afterload is the main determinant of SV","Sympathetic tone is required for cardiac contractility"],ans:1,exp:"The Frank-Starling law: increased myocardial fibre length (preload/end-diastolic volume) increases force of contraction and stroke volume, up to the point of overstretching. This is the basis of preload optimisation."},
+  {cat:"Cardiovascular",q:"The resting membrane potential of a ventricular myocyte is approximately:",opts:["0 mV","-30 mV","-70 mV","-90 mV"],ans:3,exp:"Ventricular myocyte resting membrane potential is –90 mV, maintained primarily by K⁺ conductance (IK1 channels). The SA node has a less negative resting potential (~–60 mV) due to the 'funny' current (If)."},
+  {cat:"Cardiovascular",q:"In the coronary circulation, most perfusion of the left ventricle occurs during:",opts:["Systole","Diastole","Both equally","Isovolumetric contraction"],ans:1,exp:"LV myocardium is perfused predominantly in DIASTOLE because intramyocardial pressure during systole exceeds aortic pressure, compressing subendocardial vessels. The right ventricle is perfused in both systole and diastole."},
+  {cat:"Cardiovascular",q:"Systemic vascular resistance (SVR) is calculated as:",opts:["MAP / CO","(MAP – CVP) × 80 / CO","CO × HR","MAP / HR"],ans:1,exp:"SVR = (MAP – CVP) × 80 / CO. Normal SVR = 800–1200 dynes·s·cm⁻⁵. It quantifies afterload. Increased in hypovolaemia, vasoconstrictors; decreased in sepsis, vasodilators."},
+  {cat:"Cardiovascular",q:"Baroreceptors in the carotid sinus respond primarily to:",opts:["Changes in PaO₂","Changes in arterial wall stretch (pressure)","Changes in PaCO₂","Changes in serum osmolality"],ans:1,exp:"Carotid sinus baroreceptors are mechanoreceptors that detect arterial wall stretch (correlating with blood pressure). Increased BP → increased firing → reduced sympathetic output → bradycardia + vasodilation."},
+  {cat:"Cardiovascular",q:"During a pressure-volume loop of the left ventricle, what does the width of the loop represent?",opts:["Ejection fraction","Stroke volume","End-diastolic pressure","Cardiac output"],ans:1,exp:"The width of the PV loop (difference between EDV and ESV on the volume axis) represents stroke volume. The area enclosed within the loop represents stroke work performed by the ventricle."},
+  {cat:"Cardiovascular",q:"Which of the following BEST represents Starling forces governing fluid movement across capillaries?",opts:["Jv = Kf × [(Pc − Pi) − σ(πc − πi)]","Jv = CO × SVR","Jv = MAP / CVP","Jv = ΔP × r⁴ / 8ηl"],ans:0,exp:"Starling equation: Jv = Kf [(Pc–Pi) – σ(πc–πi)]. Pc=capillary hydrostatic, Pi=interstitial hydrostatic, πc=capillary oncotic, πi=interstitial oncotic pressure. σ=reflection coefficient, Kf=filtration coefficient."},
+
+  // ── PHARMACOKINETICS (19-26) ──
+  {cat:"Pharmacokinetics",q:"The volume of distribution (Vd) of a drug is 35L. This suggests the drug is:",opts:["Confined to plasma","Confined to ECF","Widely distributed throughout the body","Bound mainly to plasma proteins"],ans:2,exp:"Vd ~35L = total body water. Vd ~3L = plasma; ~15L = ECF; ~42L = total body water; >100L = extensive tissue binding. Large Vd indicates lipophilic drugs distributed widely in peripheral tissues."},
+  {cat:"Pharmacokinetics",q:"Context-sensitive half-time refers to:",opts:["Half-life of a drug with renal impairment","Time for plasma concentration to halve after a specific infusion duration","Half-life after single bolus dose","Time for drug to achieve steady state"],ans:1,exp:"Context-sensitive half-time (CSHT) is the time for plasma drug concentration to decrease by 50% after an infusion of a specific duration. Unlike elimination half-life, CSHT accounts for drug redistribution from peripheral compartments."},
+  {cat:"Pharmacokinetics",q:"First-pass metabolism most significantly affects drugs administered by which route?",opts:["Intravenous","Oral","Subcutaneous","Inhalational"],ans:1,exp:"Oral drugs absorbed from the gut pass through the portal circulation to the liver before reaching systemic circulation — first-pass effect. High extraction ratio drugs (propranolol, morphine, lignocaine) have markedly reduced bioavailability orally."},
+  {cat:"Pharmacokinetics",q:"Which plasma protein most importantly binds acidic drugs (e.g. diazepam, warfarin)?",opts:["Alpha-1 acid glycoprotein","Albumin","Globulins","Transferrin"],ans:1,exp:"ALBUMIN predominantly binds acidic drugs. Alpha-1 acid glycoprotein (AAG) binds basic drugs (e.g. local anaesthetics, opioids). AAG is an acute phase protein — increased in inflammation, trauma; decreased in pregnancy."},
+  {cat:"Pharmacokinetics",q:"Hepatic clearance of a drug with high extraction ratio is primarily determined by:",opts:["Protein binding","Intrinsic clearance","Hepatic blood flow","Urinary pH"],ans:2,exp:"High extraction ratio drugs (ER >0.7): clearance ≈ hepatic blood flow (flow-limited). Low ER drugs: clearance depends on protein binding and intrinsic metabolic capacity. Propofol, lignocaine = high ER; warfarin, phenytoin = low ER."},
+  {cat:"Pharmacokinetics",q:"Which of the following describes a competitive antagonist?",opts:["Binds receptor irreversibly, cannot be overcome","Shifts dose-response curve left","Shifts dose-response curve right without reducing maximal response","Reduces maximum response even with high agonist doses"],ans:2,exp:"Competitive antagonists compete reversibly with agonists at the same binding site. They shift the dose-response curve to the RIGHT (increased EC50) without reducing maximal efficacy — maximal response is achievable with higher agonist concentrations."},
+  {cat:"Pharmacokinetics",q:"The Michaelis-Menten kinetics describe what type of drug elimination?",opts:["First-order kinetics","Zero-order kinetics","Mixed-order (saturable) kinetics","Second-order kinetics"],ans:2,exp:"Michaelis-Menten kinetics describe saturable elimination: at low concentrations → first-order kinetics; at high concentrations → zero-order (enzyme saturated). Phenytoin and alcohol show this pattern."},
+  {cat:"Pharmacokinetics",q:"Remifentanil has an ultra-short context-sensitive half-time primarily because:",opts:["Rapid renal excretion","Ester hydrolysis by plasma and tissue esterases","Hepatic glucuronidation","High protein binding"],ans:1,exp:"Remifentanil is metabolised by non-specific plasma and tissue esterases (ester hydrolysis) to an inactive metabolite. This occurs in all tissues, resulting in very rapid elimination regardless of infusion duration (CSHT ~3–4 min)."},
+
+  // ── INHALATIONAL (27-31) ──
+  {cat:"Inhalational",q:"Minimum alveolar concentration (MAC) is MOST accurately defined as:",opts:["The concentration preventing 50% of patients moving to surgical incision","The alveolar concentration preventing 50% of unpremedicated patients from responding to a standard surgical incision","The concentration causing loss of consciousness in 50% of patients","The ED95 for volatile agents"],ans:1,exp:"MAC = alveolar concentration (at 1 atm) preventing movement in response to a standardised surgical incision in 50% of unpremedicated patients. It is an ED50. MAC-awake (~0.3 MAC) is the concentration at which 50% can respond to verbal command."},
+  {cat:"Inhalational",q:"Which volatile agent has the LOWEST blood:gas partition coefficient?",opts:["Isoflurane (1.4)","Sevoflurane (0.65)","Desflurane (0.42)","Halothane (2.4)"],ans:2,exp:"Desflurane has the lowest blood:gas coefficient (0.42), meaning least soluble in blood → fastest induction and emergence. Sevoflurane (0.65) is next. Low solubility → rapid equilibration between alveolar and arterial partial pressures."},
+  {cat:"Inhalational",q:"The second gas effect refers to:",opts:["A second volatile agent potentiating the first","High concentration of N₂O increasing uptake of a co-administered volatile","Nitrous oxide causing diffusion hypoxia","Volatile agents potentiating NMBAs"],ans:1,exp:"The second gas effect: rapid uptake of high concentrations of N₂O concentrates co-administered volatile agents (second gas) in the alveolus, speeding their uptake. The concentration effect is N₂O concentrating itself."},
+  {cat:"Inhalational",q:"Sevoflurane metabolism produces which potentially nephrotoxic compound?",opts:["Trifluoroacetate","Compound A","Carbon monoxide","Phosgene"],ans:1,exp:"Sevoflurane reacts with soda lime (especially dry) to produce Compound A (fluoromethyl-2,2-difluoro-1-(trifluoromethyl) vinyl ether), which is nephrotoxic in rats. Clinical significance in humans is debated. Use >2 L/min flow rates to minimise."},
+  {cat:"Inhalational",q:"MAC of a volatile agent is INCREASED by:",opts:["Hypothermia","Increasing age","Hyperthyroidism","Opioid premedication"],ans:2,exp:"MAC is increased by: hyperthyroidism, hypernatraemia, chronic alcohol use (controversial), young age, CNS stimulants. MAC is decreased by: hypothermia, increasing age, opioids, benzodiazepines, pregnancy, hypotension, anaemia."},
+
+  // ── IV ANAESTHETICS (32-36) ──
+  {cat:"IV Anaesthetics",q:"Propofol's primary mechanism of anaesthetic action is:",opts:["NMDA receptor antagonism","Potentiation of GABA-A chloride ion channel","Sodium channel blockade","Kappa opioid receptor activation"],ans:1,exp:"Propofol potentiates GABA-A receptor-mediated chloride conductance (inhibitory neurotransmission). It also inhibits NMDA receptors and sodium channels. Formulated in lipid emulsion (soybean oil, glycerol, egg lecithin)."},
+  {cat:"IV Anaesthetics",q:"Ketamine produces dissociative anaesthesia primarily via:",opts:["GABA-A receptor agonism","NMDA receptor non-competitive antagonism","Alpha-2 adrenoceptor agonism","Opioid receptor agonism"],ans:1,exp:"Ketamine non-competitively antagonises NMDA (N-methyl-D-aspartate) glutamate receptors. It also has opioid, muscarinic (anticholinergic), and monoaminergic effects. Increases heart rate, BP, and bronchodilates — useful in haemodynamically compromised patients."},
+  {cat:"IV Anaesthetics",q:"Etomidate's major clinical concern with prolonged infusion is:",opts:["Propofol infusion syndrome","Adrenocortical suppression","Severe hypotension","Nephrotoxicity"],ans:1,exp:"Etomidate inhibits 11β-hydroxylase (and 17α-hydroxylase), suppressing cortisol and aldosterone synthesis. Even a single induction dose suppresses adrenal function for 6–8 hours. Prolonged infusion can cause adrenal insufficiency."},
+  {cat:"IV Anaesthetics",q:"Why does thiopentone produce rapid awakening despite a long elimination half-life (8–10 hours)?",opts:["Rapid metabolism in the liver","Rapid renal excretion","Redistribution from brain to peripheral tissues","High plasma protein binding"],ans:2,exp:"Thiopentone awakening is due to REDISTRIBUTION (not metabolism). High lipid solubility causes rapid CNS effect, then drug redistributes to muscle and fat, reducing brain concentration and causing awakening. Elimination half-life is 8–10h due to slow release from fat."},
+  {cat:"IV Anaesthetics",q:"Dexmedetomidine exerts its sedative and analgesic effects via:",opts:["GABA-A potentiation in the cortex","Alpha-2 adrenoceptor agonism in locus coeruleus","NMDA receptor antagonism","Opioid mu-receptor partial agonism"],ans:1,exp:"Dexmedetomidine is a highly selective alpha-2 adrenoceptor agonist (8× more selective than clonidine). It inhibits noradrenaline release in the locus coeruleus, causing sedation, analgesia, and anxiolysis without respiratory depression."},
+
+  // ── OPIOIDS (37-40) ──
+  {cat:"Opioids",q:"Which opioid receptor subtype is primarily responsible for supraspinal analgesia?",opts:["Kappa (κ)","Delta (δ)","Mu (μ)","Sigma (σ)"],ans:2,exp:"Mu (μ) receptors mediate supraspinal and spinal analgesia, euphoria, respiratory depression, miosis, reduced GI motility. Kappa receptors mediate spinal analgesia and dysphoria. Delta receptors contribute to analgesia and mood."},
+  {cat:"Opioids",q:"Morphine-6-glucuronide (M6G) compared to morphine is:",opts:["Less potent and active","More potent at mu receptors and active","Inactive metabolite","Renally cleared and inactive"],ans:1,exp:"M6G is a MORE potent agonist at mu receptors than morphine. It accumulates in renal failure and contributes significantly to analgesic effect and toxicity (respiratory depression). M3G is the other major metabolite but is inactive and may antagonise analgesia."},
+  {cat:"Opioids",q:"Remifentanil's unique pharmacological feature is:",opts:["Active metabolite with prolonged effect","Metabolism by plasma esterases giving ultra-short action","Selective kappa agonism","High protein binding causing long context-sensitive half-time"],ans:1,exp:"Remifentanil has an ester linkage hydrolysed by non-specific plasma and tissue esterases → ultra-short action (CSHT ~3–4 min regardless of infusion duration). Active mu agonist. No analgesic effect after stopping — plan analgesia."},
+  {cat:"Opioids",q:"Naloxone reverses opioid toxicity by:",opts:["Partial mu agonism","Competitive antagonism at all opioid receptors","Metabolising circulating opioids","Stimulating central respiratory drive directly"],ans:1,exp:"Naloxone is a COMPETITIVE ANTAGONIST at mu, kappa, and delta opioid receptors. Short half-life (~1–1.5h) — often shorter than the opioid it reverses. Repeat dosing or infusion may be required. Can precipitate acute withdrawal."},
+
+  // ── NMB (41-43) ──
+  {cat:"NMB",q:"Suxamethonium produces initial muscle fasciculations because:",opts:["It blocks nicotinic receptors immediately","It acts as a partial agonist causing sustained depolarisation and desensitisation","It activates ACh release at the neuromuscular junction","It stimulates muscarinic receptors in muscle"],ans:1,exp:"Suxamethonium mimics ACh at nicotinic receptors, causing initial depolarisation (fasciculations). Sustained receptor occupancy causes persistent depolarisation (phase I block), preventing further depolarisation and causing flaccid paralysis."},
+  {cat:"NMB",q:"Sugammadex reverses rocuronium-induced neuromuscular blockade by:",opts:["Inhibiting acetylcholinesterase","Encapsulating rocuronium in its hydrophilic core","Competing at nicotinic receptors","Enhancing ACh release from nerve terminal"],ans:1,exp:"Sugammadex is a modified gamma-cyclodextrin that encapsulates steroidal NMBAs (rocuronium > vecuronium) in a 1:1 complex, rapidly removing them from the neuromuscular junction and plasma. It does not inhibit cholinesterase — no muscarinic side effects."},
+  {cat:"NMB",q:"Train-of-four (TOF) ratio <0.9 indicates:",opts:["Adequate reversal of neuromuscular block","Clinically significant residual neuromuscular blockade","Phase II block from suxamethonium","Complete neuromuscular recovery"],ans:1,exp:"TOF ratio <0.9 indicates clinically significant residual NMB. Patients may have difficulty maintaining airway, impaired hypoxic ventilatory response, aspiration risk. A ratio ≥0.9 indicates acceptable recovery. Quantitative TOF monitoring is recommended."},
+
+  // ── NEUROPHYSIOLOGY (44-46) ──
+  {cat:"Neurophysiology",q:"Cerebral perfusion pressure (CPP) is calculated as:",opts:["MAP – ICP","MAP + ICP","MAP – CVP","MAP – PCWP"],ans:0,exp:"CPP = MAP – ICP (or CVP if CVP > ICP). Normal CPP = 60–80 mmHg. Target CPP in TBI = ≥60 mmHg. Normal ICP = 5–15 mmHg. Cerebral autoregulation maintains CBF over MAP 50–150 mmHg."},
+  {cat:"Neurophysiology",q:"The blood-brain barrier (BBB) is formed primarily by:",opts:["Astrocyte foot processes","Tight junctions between cerebral endothelial cells","Microglia","Pericytes"],ans:1,exp:"The BBB is primarily maintained by TIGHT JUNCTIONS (zonulae occludentes) between cerebral capillary endothelial cells, supported by astrocyte foot processes and pericytes. It prevents passage of hydrophilic molecules, ions, and pathogens."},
+  {cat:"Neurophysiology",q:"Which volatile anaesthetic MOST significantly increases cerebral blood flow (CBF)?",opts:["Sevoflurane","Isoflurane","Desflurane","Halothane"],ans:3,exp:"Halothane most significantly increases CBF and ICP (cerebral vasodilation). Modern agents: desflurane > isoflurane > sevoflurane in CBF increase. Sevoflurane is preferred in neurosurgery due to minimal CBF increase at ≤1 MAC."},
+
+  // ── ANATOMY (47-48) ──
+  {cat:"Anatomy",q:"The epidural space is entered at which layer when performing an epidural via the midline approach?",opts:["Passing through anterior longitudinal ligament","After supraspinous ligament, interspinous ligament, and ligamentum flavum","After penetrating the dura","Between arachnoid and pia mater"],ans:1,exp:"Midline epidural needle passes through: skin → subcutaneous fat → supraspinous ligament → interspinous ligament → ligamentum flavum → EPIDURAL SPACE. The characteristic 'loss of resistance' occurs as the needle exits the ligamentum flavum."},
+  {cat:"Anatomy",q:"The brachial plexus is formed from nerve roots:",opts:["C4–C8","C5–T1","C4–T1","C6–T2"],ans:1,exp:"Brachial plexus: roots C5, C6, C7, C8, T1. Forms trunks (upper C5–6, middle C7, lower C8–T1), divisions, cords (lateral, medial, posterior), and branches (musculocutaneous, median, ulnar, radial, axillary)."},
+
+  // ── ACID-BASE (49) ──
+  {cat:"Acid-Base",q:"In metabolic acidosis with respiratory compensation, which pattern is expected?",opts:["Low pH, high PaCO₂, low HCO₃⁻","Low pH, low PaCO₂, low HCO₃⁻","High pH, low PaCO₂, high HCO₃⁻","Normal pH, high PaCO₂, normal HCO₃⁻"],ans:1,exp:"Metabolic acidosis: primary low HCO₃⁻ → low pH. Respiratory compensation: hyperventilation → low PaCO₂ (Kussmaul breathing). Winter's formula: expected PaCO₂ = 1.5 × [HCO₃⁻] + 8 ± 2. If PaCO₂ differs, there's a mixed disorder."},
+
+  // ── PHYSICS (50) ──
+  {cat:"Physics",q:"According to the Hagen-Poiseuille equation, flow through a tube is most influenced by:",opts:["Length of the tube","Viscosity of the fluid","Radius of the tube (fourth power)","Pressure gradient"],ans:2,exp:"Hagen-Poiseuille: Q = πr⁴ΔP / 8ηl. Flow is proportional to r⁴ — doubling the radius increases flow 16-fold. This is why 'short, wide cannulae' are used for rapid fluid administration. Length and viscosity have minor comparatively effects."},
+];
+
+// ══════════════════════════════════════════════════════════════════════════
+// FLASHCARD DATA
+// ══════════════════════════════════════════════════════════════════════════
+const flashcards = {
+  "Respiratory": [
+    {q:"What is FRC and what reduces it?", a:"FRC = ERV + RV (~2.5L). Reduced by: obesity, supine position, pregnancy, anaesthesia, abdominal pathology. Increased by: COPD/emphysema (air trapping)."},
+    {q:"Define the Bohr equation for dead space.", a:"Vd/Vt = (PaCO₂ – PECO₂) / PaCO₂. Normal ratio ~0.33. Physiological dead space = anatomical + alveolar dead space."},
+    {q:"What is the P50 of the O₂-Hb dissociation curve?", a:"P50 = 3.5 kPa (26 mmHg) — PO₂ at 50% Hb saturation at pH 7.4, 37°C. Right shift (increased P50): acidosis, ↑PaCO₂, ↑temp, ↑2,3-DPG (Bohr effect)."},
+    {q:"What factors reduce HPV?", a:"Hypoxic pulmonary vasoconstriction is inhibited by: volatile anaesthetics, vasodilators (nitroprusside, GTN), alkalosis, calcium channel blockers."},
+    {q:"How is CO₂ transported in blood?", a:"70% as bicarbonate (HCO₃⁻), 20–25% as carbamino compounds (bound to Hb proteins), 5–10% dissolved. CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (carbonic anhydrase)."},
+    {q:"What is pulmonary surfactant? Why is it important?", a:"Dipalmitoyl phosphatidylcholine (DPPC) secreted by type II pneumocytes. Reduces surface tension (especially in small alveoli), preventing collapse. Laplace's law: P = 2T/r."},
+  ],
+  "Cardiovascular": [
+    {q:"State the Fick principle for cardiac output measurement.", a:"CO = O₂ consumption (VO₂) / [CaO₂ – CvO₂]. Normal CO = 4–6 L/min. CI = CO/BSA = 2.5–4 L/min/m². Gold standard for CO measurement."},
+    {q:"What are the phases of the ventricular action potential?", a:"Phase 0: rapid depolarisation (Na⁺ in). Phase 1: early repolarisation (K⁺ out). Phase 2: plateau (Ca²⁺ in, K⁺ out). Phase 3: repolarisation (K⁺ out). Phase 4: resting."},
+    {q:"What is coronary steal?", a:"Vasodilators (e.g. isoflurane) dilate normal coronary vessels more than stenosed ones, 'stealing' blood from ischaemic areas. Isoflurane can cause this in severe coronary disease."},
+    {q:"Explain Starling forces in capillary fluid exchange.", a:"Jv = Kf[(Pc – Pi) – σ(πc – πi)]. Net filtration pressure = hydrostatic gradient minus oncotic gradient. Normal Pc ~35/15 mmHg (arterial/venous), πc ~28 mmHg. Net filtration at arterial end, reabsorption at venous end."},
+    {q:"What is the carotid sinus reflex?", a:"Increased BP → baroreceptors fire → NTS → nucleus ambiguus (vagus: bradycardia) + RVLM inhibition (sympathetic: vasodilation). Carotid massage can treat SVT by this mechanism."},
+    {q:"Define afterload and its determinants.", a:"Afterload = tension in ventricular wall during ejection (related to impedance the ventricle faces). Determined by SVR, aortic compliance, blood viscosity, ventricular size (Laplace). Increased by hypertension, aortic stenosis."},
+  ],
+  "Pharmacokinetics": [
+    {q:"What is volume of distribution (Vd)?", a:"Vd = amount of drug in body / plasma concentration. Vd ~3L (plasma), ~15L (ECF), ~42L (TBW), >100L (tissue bound). Large Vd = lipophilic, tissue-sequestered drugs (e.g. chloroquine >500L)."},
+    {q:"Explain context-sensitive half-time (CSHT).", a:"Time for plasma concentration to fall 50% after infusion of specific duration. Remifentanil: CSHT ~4 min regardless. Fentanyl: CSHT markedly increases with infusion duration. Propofol: moderate increase."},
+    {q:"Define therapeutic index (TI).", a:"TI = TD50/ED50. Wide TI = safe drug. Narrow TI drugs require monitoring: warfarin, digoxin, lithium, phenytoin, aminoglycosides, cyclosporine. Volatile agents have very narrow TI."},
+    {q:"What is the difference between potency and efficacy?", a:"Potency: amount of drug needed to produce a given effect (EC50 — lower EC50 = more potent). Efficacy: maximum effect a drug can produce (Emax). A drug can be highly potent but have low efficacy (partial agonist)."},
+    {q:"What is enzyme induction? Give examples.", a:"Increased synthesis of CYP450 enzymes, increasing drug metabolism. Examples of inducers: rifampicin, carbamazepine, phenytoin, phenobarbitone, St John's Wort, chronic alcohol. Effect takes days to weeks."},
+    {q:"What determines hepatic drug clearance?", a:"High extraction ratio (ER): flow-dependent (e.g. propofol, lidocaine, morphine). Low ER: enzyme/binding-dependent (e.g. warfarin, phenytoin). Intermediate ER: both. ER = (Cin – Cout) / Cin."},
+  ],
+  "Inhalational": [
+    {q:"What factors DECREASE MAC?", a:"Increasing age, hypothermia, opioids, benzodiazepines, alpha-2 agonists, pregnancy, hypotension, severe anaemia, IV anaesthetics, hypercarbia, hyponatraemia, hypoxia (extreme)."},
+    {q:"What is the oil:gas partition coefficient?", a:"Measures lipid solubility of volatile agents. High oil:gas = potent (low MAC). Mirrors the Meyer-Overton hypothesis — potency correlates with lipid solubility. Halothane high (224), desflurane low (18.7)."},
+    {q:"Compare blood:gas coefficients of sevoflurane vs desflurane.", a:"Sevoflurane: 0.65 (faster than isoflurane). Desflurane: 0.42 (fastest modern agent). Lower coefficient → less soluble in blood → faster wash-in and wash-out → faster induction and emergence."},
+    {q:"What is MAC-awake?", a:"The alveolar concentration at which 50% of patients can respond to verbal command (~0.3–0.4 MAC). MAC-awake for sevoflurane ~0.6%. MAC-intubation ~1.3× MAC. MAC-bar (blocks adrenergic response) ~1.5× MAC."},
+    {q:"Why does desflurane cause airway irritation?", a:"Desflurane has a pungent odour and is irritant to airway mucosa, triggering coughing, laryngospasm, and bronchospasm if used for inhalational induction. Not recommended for inhalational induction; ideal for maintenance with low CSHT."},
+  ],
+  "IV Anaesthetics": [
+    {q:"What is propofol infusion syndrome (PRIS)?", a:"Rare but life-threatening complication of high-dose, prolonged propofol infusion. Features: metabolic acidosis, cardiac failure, rhabdomyolysis, lipaemia, acute renal failure. Risk: >5 mg/kg/hr for >48h, especially in critically ill children."},
+    {q:"What are the cardiovascular effects of ketamine?", a:"Stimulates sympathetic nervous system: ↑HR, ↑BP, ↑CO, ↑myocardial O₂ demand. Directly myocardial depressant (masked by sympathetic stimulation in healthy patients). Useful in hypovolaemia/shock."},
+    {q:"Why is etomidate used for induction in haemodynamically compromised patients?", a:"Etomidate has the most haemodynamically stable profile — minimal effects on HR, BP, CO. Useful in shock, cardiac tamponade, severe IHD. Risk: adrenocortical suppression (avoid in sepsis)."},
+    {q:"What is the difference between thiopentone and propofol emergence?", a:"Thiopentone: slow emergence due to redistribution into fat (long elimination T½ 8–10h). Propofol: rapid clear emergence (short effective T½ due to rapid metabolism to inactive metabolites), anti-emetic properties."},
+    {q:"Describe dexmedetomidine's mechanism and clinical uses.", a:"Selective α-2 agonist (700:1 selectivity over α-1). Acts on locus coeruleus (sedation), spinal cord (analgesia), peripheral nerves (analgesia). Uses: ICU sedation, procedural sedation, as anaesthetic adjunct, opioid-sparing."},
+  ],
+  "Opioids": [
+    {q:"Compare alfentanil, fentanyl, and remifentanil kinetics.", a:"Alfentanil: rapid onset (T½ke0 ~1min), short action, low Vd. Fentanyl: slower onset, longer action, high Vd (accumulates). Remifentanil: ultra-rapid ester hydrolysis, CSHT ~4min regardless of duration, no active metabolites."},
+    {q:"What are the clinical effects of mu-opioid receptor activation?", a:"Analgesia (supraspinal + spinal), euphoria/sedation, respiratory depression (↓sensitivity to CO₂), nausea/vomiting, miosis (pinpoint pupils), ↓GI motility/constipation, urinary retention, pruritus (from histamine release)."},
+    {q:"What is the significance of morphine's active metabolites?", a:"M6G: active, more potent than morphine at μ receptors, accumulates in renal failure → prolonged/enhanced analgesia and respiratory depression. M3G: inactive, may antagonise analgesia and cause CNS excitation."},
+    {q:"What is the mechanism of opioid-induced respiratory depression?", a:"Opioids act on μ-receptors in pre-Bötzinger complex (respiratory rhythm generator) and nucleus tractus solitarius in brainstem → ↓respiratory rate, ↓tidal volume, ↓hypercapnic/hypoxic drive, ↑apnoeic threshold."},
+  ],
+  "NMB": [
+    {q:"Explain phase I vs phase II block with suxamethonium.", a:"Phase I (depolarising block): initial fasciculations, then flaccid paralysis. TOF ratio maintained, tetanus not sustained. Phase II (desensitisation block): occurs with repeated/large doses. TOF shows fade, like non-depolarising block. Augmented by anticholinesterases."},
+    {q:"What are contraindications to suxamethonium?", a:"Hyperkalaemia (burns, crush injuries, denervation, myopathies), malignant hyperthermia susceptibility, pseudocholinesterase deficiency, open-eye injury (transient IOP rise), personal/family history of MH, Duchenne/Becker muscular dystrophy."},
+    {q:"How does sugammadex work and what is its dose?", a:"Sugammadex encapsulates steroidal NMBAs (rocuronium > vecuronium). Dose: 2 mg/kg (T2 recovery), 4 mg/kg (PTC 1–2), 16 mg/kg (immediate reversal after rocuronium 1.2 mg/kg). Renally excreted. Caution: repeat dosing and rocuronium re-dosing."},
+    {q:"What is the Hofmann elimination?", a:"Spontaneous, non-enzymatic degradation of atracurium and cisatracurium at physiological pH and temperature. Organ-independent. Produces laudanosine (CNS stimulant at high concentrations — minimal clinical concern). Ideal for hepatic/renal failure."},
+  ],
+  "Neurophysiology": [
+    {q:"What is the Monro-Kellie doctrine?", a:"The skull is a rigid container with fixed volume. Contents: brain (80%), blood (10%), CSF (10%). If one increases, others must decrease. Compensatory mechanisms (CSF displacement, venous blood egress) eventually fail → ICP rises exponentially."},
+    {q:"Define cerebral autoregulation.", a:"CBF is maintained constant (50 ml/100g/min) over MAP 50–150 mmHg. Mechanism: myogenic (pressure-induced vasoconstriction), metabolic (CO₂-mediated). Disrupted by: volatile agents (>1 MAC), trauma, stroke, hypertensive emergencies."},
+    {q:"What is the effect of PaCO₂ on cerebral blood flow?", a:"CBF changes linearly with PaCO₂ between 3–8 kPa (20–60 mmHg). Each 1 kPa rise in PaCO₂ increases CBF ~30%. Hyperventilation (↓PaCO₂) reduces CBF — used in acute ↑ICP. Below PaCO₂ 3.3 kPa → ischaemia risk."},
+    {q:"What is BIS monitoring?", a:"Bispectral Index (BIS): processed EEG parameter (0–100 scale). BIS 40–60 = adequate anaesthesia (general). BIS >70 = sedation/light anaesthesia. BIS 100 = fully awake. Reduces awareness and over-anaesthesia. Affected by: electromyography, EMI, hypothermia."},
+  ],
+  "Anatomy": [
+    {q:"Name the contents of the epidural space.", a:"Loose areolar connective tissue, fat, lymphatics, arteries (radicular branches), internal vertebral venous plexus (Batson's plexus — valveless, explains cancer metastasis). NO CSF. Extends from foramen magnum to sacrococcygeal membrane."},
+    {q:"What structures form the boundaries of the femoral triangle?", a:"Superior: inguinal ligament. Medial: adductor longus. Lateral: sartorius. Floor: iliopsoas + pectineus. Roof: fascia lata. Contents (lateral to medial): NAVY — Nerve, Artery, Vein, emtY (lymphatics)."},
+    {q:"Describe the anatomy relevant to interscalene brachial plexus block.", a:"Needle target: groove between anterior and middle scalene muscles at C6 level (identified by Chassaignac's tubercle). Anaesthetises C5–C6–C7 (shoulder surgery). Spares C8–T1 (ulnar nerve). Complications: phrenic nerve block (always occurs), pneumothorax, vertebral artery."},
+    {q:"What is the significance of the cricothyroid membrane?", a:"Avascular membrane between thyroid and cricoid cartilages. Landmark for emergency front-of-neck access (FONA). Dimensions: 9×30 mm (height × width). Safest surgical airway site. Identified by palpating thyroid notch → thyroid cartilage → CTM → cricoid."},
+  ],
+  "Acid-Base": [
+    {q:"Interpret: pH 7.28, PaCO₂ 5.2 kPa, HCO₃⁻ 17 mmol/L.", a:"Primary metabolic acidosis (low HCO₃⁻, low pH). Respiratory compensation inadequate? Winter's formula: expected PaCO₂ = 1.5 × 17 + 8 = 33.5 mmHg (4.5 kPa). Actual 5.2 kPa > expected → mixed metabolic acidosis + respiratory acidosis."},
+    {q:"What is the anion gap and what causes a raised AG?", a:"AG = [Na⁺] – ([Cl⁻] + [HCO₃⁻]). Normal = 8–12 mmol/L (12–16 if albumin included). Raised AG acidosis (MUDPILES): Methanol, Uraemia, Diabetic ketoacidosis, Propylene glycol/Paracetamol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates."},
+    {q:"What is the Stewart approach to acid-base?", a:"Stewart: pH determined by 3 independent variables — PaCO₂, strong ion difference (SID = [Na⁺+K⁺+Ca²⁺+Mg²⁺] – [Cl⁻+lactate]), and total weak acids (ATOT: albumin, phosphate). Normal SID ~40 mEq/L. Low SID → acidosis."},
+    {q:"Describe the bicarbonate buffer system.", a:"H₂CO₃ ⇌ H⁺ + HCO₃⁻. Henderson-Hasselbalch: pH = pKa + log [HCO₃⁻] / (0.03 × PaCO₂). pKa = 6.1. Major extracellular buffer. HCO₃⁻ regulated by kidneys (slow), PaCO₂ by lungs (rapid). Open system — highly effective."},
+  ],
+  "Physics": [
+    {q:"State the Hagen-Poiseuille equation and its clinical relevance.", a:"Q = πr⁴ΔP / 8ηl. Flow proportional to r⁴. Doubling radius → 16× flow. Clinical: wide-bore short IV cannulas for rapid infusion. Turbulent flow (Reynolds number >2000): Q ∝ ΔP (not r⁴)."},
+    {q:"What is the Beer-Lambert law and how does it apply to pulse oximetry?", a:"Absorbance = ε × c × l. Pulse oximetry uses two wavelengths (660nm red: deoxy-Hb; 940nm infrared: oxy-Hb). Ratio of absorbances calibrated against standard curves. Inaccurate: carboxyHb, metHb, nail varnish, motion, dark skin pigmentation (overestimates), low perfusion."},
+    {q:"Explain damping in arterial blood pressure monitoring.", a:"Underdamping (resonance): overshoot, falsely high systolic and low diastolic. Overdamping (kinks, clots, bubbles): loses fine detail, falsely low systolic. Optimal damping coefficient 0.64. Critical resonant frequency >40 Hz for reliable monitoring."},
+    {q:"What are the gas laws relevant to anaesthesia?", a:"Boyle's: P₁V₁ = P₂V₂ (constant T). Charles': V/T = constant (constant P). Gay-Lussac's: P/T = constant (constant V). Ideal gas: PV = nRT. Dalton's law: total pressure = sum of partial pressures. Henry's law: gas dissolved ∝ partial pressure."},
+  ],
+};
+
+// ══════════════════════════════════════════════════════════════════════════
+// SCHEDULE DATA
+// ══════════════════════════════════════════════════════════════════════════
+const phases = [
+  {
+    title: "Phase 1: Foundation & Physiology",
+    color: "#2d6a4f",
+    dates: "1 June – 22 June 2026 (Weeks 1–3)",
+    weeks: [
+      {label:"Week 1\n1–7 Jun",content:"Respiratory physiology in depth: lung volumes, V/Q, O₂-Hb curve, CO₂ transport, surfactant, compliance. Read Nunn's Applied Respiratory Physiology Chapters 1–6. Do 20 MCQs daily."},
+      {label:"Week 2\n8–14 Jun",content:"Cardiovascular physiology: cardiac cycle, output, Frank-Starling, action potentials, coronary circulation, baroreceptors. Pressure-volume loops. Read Miller's Ch 5–6. Full mock (50 Qs) on Sunday."},
+      {label:"Week 3\n15–22 Jun",content:"Renal physiology: GFR, tubular function, RAAS, ADH, acid-base. Neurophysiology: CBF autoregulation, ICP, BBB. Ganong's Ch 37–40. Weekend: review flashcards all physiology topics."},
+    ],
+    tip:"🧠 Key insight: Physiology is 40% of the exam. Invest heavily in these 3 weeks. Draw the O₂-Hb curve from memory daily."
+  },
+  {
+    title: "Phase 2: Pharmacology Core",
+    color: "#1d3557",
+    dates: "23 June – 20 July 2026 (Weeks 4–7)",
+    weeks: [
+      {label:"Week 4\n23–29 Jun",content:"Pharmacokinetics: Vd, clearance, half-life, CSHT, compartment models, protein binding, first-pass. Stoelting Ch 1–3. Practise PK calculations. 30 MCQs daily."},
+      {label:"Week 5\n30 Jun–6 Jul",content:"Inhalational agents: MAC, blood:gas coefficients, individual agents (sevoflurane, desflurane, isoflurane, N₂O), mechanisms, metabolism. Full mock exam Sunday."},
+      {label:"Week 6\n7–13 Jul",content:"IV anaesthetics: propofol, ketamine, thiopentone, etomidate, dexmedetomidine, midazolam. TIVA principles. TCI models (Marsh, Schnider). Stoelting Ch 4–8."},
+      {label:"Week 7\n14–20 Jul",content:"Opioids: receptor subtypes, fentanyl family, morphine metabolites, tramadol, naloxone. NSAIDs, paracetamol, local anaesthetics (mechanism, toxicity). Weekend: review Phase 1+2 weak topics."},
+    ],
+    tip:"💊 Strategy: Link pharmacokinetics to specific drug examples. Never learn PK in isolation. Context-sensitive half-times are a favourite topic."
+  },
+  {
+    title: "Phase 3: Applied Topics & Anatomy",
+    color: "#6b2d5e",
+    dates: "21 July – 10 August 2026 (Weeks 8–10)",
+    weeks: [
+      {label:"Week 8\n21–27 Jul",content:"Neuromuscular blocking agents: depolarising vs non-depolarising, TOF monitoring, reversal (neostigmine vs sugammadex). Autonomic pharmacology: adrenergic, cholinergic receptors. 40 MCQs daily."},
+      {label:"Week 9\n28 Jul–3 Aug",content:"Applied anatomy: airway anatomy, brachial plexus, epidural/spinal anatomy, lower limb nerve blocks, stellate ganglion. Practise drawing key diagrams."},
+      {label:"Week 10\n4–10 Aug",content:"Physics & measurement: gas laws, flowmeters, pulse oximetry, invasive monitoring, electrical safety, capnography. Acid-base interpretation. Full mock exam (100 Qs, timed) at weekend."},
+    ],
+    tip:"🦴 Anatomy tip: Draw the brachial plexus from scratch every morning for 2 weeks. Anatomy questions require spatial thinking — visualise, don't just memorise."
+  },
+  {
+    title: "Phase 4: Intensive Revision & Mock Exams",
+    color: "#7c4700",
+    dates: "11 August – 1 September 2026 (Weeks 11–13)",
+    weeks: [
+      {label:"Week 11\n11–17 Aug",content:"Rapid-fire revision: all topics. Use flashcards exclusively. 60 MCQs daily timed. Identify and TARGET weak areas. Revisit all wrong answers from previous mocks."},
+      {label:"Week 12\n18–24 Aug",content:"Full-length mock exams (2 papers, 60 Qs each, 90 mins): simulate actual exam conditions. Review every answer. Focus on highest-yield: respiratory, CVS, PK, NMB."},
+      {label:"Week 13\n25 Aug–1 Sep",content:"Final week: light revision only. Review your summary notes/flashcards. No new topics. Rest adequately. Ensure registration, ID, stable internet (if online). Exam mode ON!"},
+    ],
+    tip:"🎯 Final week: Trust your preparation. Avoid cramming new topics. Mental confidence and physical rest are as important as knowledge."
+  }
+];
+
+// ══════════════════════════════════════════════════════════════════════════
+// QUIZ LOGIC
+// ══════════════════════════════════════════════════════════════════════════
+let currentQ = 0, score = 0, activeQs = [], answered = [];
+
+function startQuiz() {
+  const cat = document.getElementById('filter-category').value;
+  activeQs = cat === 'all' ? [...questions] : questions.filter(q => q.cat === cat);
+  answered = new Array(activeQs.length).fill(false);
+  score = 0; currentQ = 0;
+  document.getElementById('score-panel').style.display = 'none';
+  document.getElementById('quiz-progress').style.display = 'flex';
+  renderQuiz();
+}
+
+function renderQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  activeQs.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'qcard' + (i === currentQ ? ' active' : '');
+    div.id = 'qcard-' + i;
+    const letters = ['A','B','C','D'];
+    div.innerHTML = `
+      <div class="q-number">Question ${i+1} of ${activeQs.length}</div>
+      <span class="q-category">${q.cat}</span>
+      <div class="q-text">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((o,j) => `<button class="option-btn" onclick="selectAnswer(${i},${j})" id="opt-${i}-${j}">
+          <span class="option-letter">${letters[j]}</span>${o}
+        </button>`).join('')}
+      </div>
+      <div class="explanation" id="exp-${i}"><strong>📖 Explanation:</strong> ${q.exp}</div>
+      <div class="q-nav">
+        <button onclick="prevQ()" ${i===0?'disabled':''}>← Previous</button>
+        <button onclick="nextQ()" ${i===activeQs.length-1?'':''}>${i===activeQs.length-1?'Finish Quiz ✓':'Next →'}</button>
+      </div>`;
+    container.appendChild(div);
+  });
+  updateProgress();
+}
+
+function selectAnswer(qi, chosen) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+  const q = activeQs[qi];
+  const btns = document.querySelectorAll(`#qcard-${qi} .option-btn`);
+  btns.forEach((b,i) => {
+    b.disabled = true;
+    if (i === q.ans) b.classList.add('correct');
+    else if (i === chosen) b.classList.add('wrong');
+  });
+  if (chosen === q.ans) score++;
+  document.getElementById(`exp-${qi}`).classList.add('show');
+  document.getElementById('score-live').textContent = `Score: ${score}`;
+}
+
+function nextQ() {
+  if (currentQ < activeQs.length - 1) { currentQ++; showCard(); }
+  else finishQuiz();
+}
+function prevQ() { if (currentQ > 0) { currentQ--; showCard(); } }
+function showCard() {
+  document.querySelectorAll('.qcard').forEach((c,i) => c.classList.toggle('active', i===currentQ));
+  updateProgress();
+}
+function updateProgress() {
+  document.getElementById('q-counter').textContent = `Q ${currentQ+1} / ${activeQs.length}`;
+  document.getElementById('progress-bar').style.width = ((currentQ+1)/activeQs.length*100) + '%';
+}
+function finishQuiz() {
+  document.getElementById('quiz-container').innerHTML = '';
+  document.getElementById('quiz-progress').style.display = 'none';
+  const panel = document.getElementById('score-panel');
+  panel.style.display = 'block';
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('total-display').textContent = activeQs.length;
+  const pct = Math.round(score/activeQs.length*100);
+  let msg = pct >= 75 ? '🏆 Excellent! You are well on track for a high rank.' : pct >= 65 ? '✅ Good pass! Keep revising weak areas.' : pct >= 50 ? '⚠️ Borderline. Focus on weak topics urgently.' : '❌ Below pass mark. Intensive revision needed.';
+  document.getElementById('score-message').textContent = `${pct}% — ${msg}`;
+}
+function resetQuiz() {
+  document.getElementById('quiz-container').innerHTML = '';
+  document.getElementById('quiz-progress').style.display = 'none';
+  document.getElementById('score-panel').style.display = 'none';
+  score = 0; currentQ = 0; activeQs = []; answered = [];
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// FLASHCARD LOGIC
+// ══════════════════════════════════════════════════════════════════════════
+let fcState = {};
+
+function initFlashcards() {
+  const tabsEl = document.getElementById('fc-tabs');
+  const decksEl = document.getElementById('fc-decks');
+  const topics = Object.keys(flashcards);
+
+  topics.forEach((topic, ti) => {
+    fcState[topic] = 0;
+    const tab = document.createElement('button');
+    tab.className = 'fc-tab' + (ti === 0 ? ' active' : '');
+    tab.textContent = topic;
+    tab.onclick = () => switchFCTopic(topic);
+    tabsEl.appendChild(tab);
+
+    const deck = document.createElement('div');
+    deck.className = 'fc-deck' + (ti === 0 ? ' active' : '');
+    deck.id = 'fc-deck-' + topic.replace(/\s/g,'');
+    deck.innerHTML = renderFCCard(topic);
+    decksEl.appendChild(deck);
+  });
+}
+
+function renderFCCard(topic) {
+  const cards = flashcards[topic];
+  const idx = fcState[topic];
+  const c = cards[idx];
+  return `
+    <div class="fc-card-wrap">
+      <div class="fc-card" id="fc-card-${topic.replace(/\s/g,'')}" onclick="this.classList.toggle('flipped')">
+        <div class="fc-front">
+          <div class="fc-label">Question</div>
+          <div class="fc-q">${c.q}</div>
+        </div>
+        <div class="fc-back">
+          <div class="fc-label">Answer</div>
+          <div class="fc-a">${c.a}</div>
+        </div>
+      </div>
+    </div>
+    <p class="fc-hint">👆 Click card to flip</p>
+    <div class="fc-controls">
+      <button onclick="fcPrev('${topic}')">← Prev</button>
+      <button onclick="fcNext('${topic}')">Next →</button>
+    </div>
+    <div class="fc-counter">${idx+1} / ${cards.length}</div>`;
+}
+
+function switchFCTopic(topic) {
+  document.querySelectorAll('.fc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.fc-deck').forEach(d => d.classList.remove('active'));
+  document.querySelector(`.fc-tab:nth-child(${Object.keys(flashcards).indexOf(topic)+1})`).classList.add('active');
+  document.getElementById('fc-deck-' + topic.replace(/\s/g,'')).classList.add('active');
+}
+
+function fcNext(topic) {
+  const cards = flashcards[topic];
+  fcState[topic] = (fcState[topic] + 1) % cards.length;
+  document.getElementById('fc-deck-' + topic.replace(/\s/g,'')).innerHTML = renderFCCard(topic);
+}
+function fcPrev(topic) {
+  const cards = flashcards[topic];
+  fcState[topic] = (fcState[topic] - 1 + cards.length) % cards.length;
+  document.getElementById('fc-deck-' + topic.replace(/\s/g,'')).innerHTML = renderFCCard(topic);
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// SCHEDULE LOGIC
+// ══════════════════════════════════════════════════════════════════════════
+function initSchedule() {
+  const container = document.getElementById('phases-container');
+  phases.forEach((p, pi) => {
+    const div = document.createElement('div');
+    div.className = 'phase';
+    div.innerHTML = `
+      <div class="phase-header" onclick="togglePhase(${pi})" id="ph-${pi}">
+        <div>
+          <h3 style="border-left:4px solid ${p.color};padding-left:.6rem;">${p.title}</h3>
+          <div class="phase-dates">${p.dates}</div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="phase-body" id="pb-${pi}">
+        ${p.weeks.map(w => `<div class="week-row">
+          <span class="week-label" style="white-space:pre-line">${w.label}</span>
+          <span class="week-content">${w.content}</span>
+        </div>`).join('')}
+        <div class="daily-tip">${p.tip}</div>
+      </div>`;
+    container.appendChild(div);
+  });
+  // Open first phase by default
+  togglePhase(0);
+}
+
+function togglePhase(pi) {
+  const header = document.getElementById('ph-' + pi);
+  const body = document.getElementById('pb-' + pi);
+  header.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  initFlashcards();
+  initSchedule();
+});
+</script>
+</body>
+</html>
